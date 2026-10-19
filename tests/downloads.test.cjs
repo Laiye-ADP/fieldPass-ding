@@ -6,7 +6,7 @@ const { test } = require('node:test');
 const { updateReadmeDownloads } = require('../scripts/downloads');
 
 const definitions = [
-  { id: 'invoice', outputName: '发票识别', i18n: { 'zh-CN': { fieldName: '发票+明细（ADP）' } } },
+  { id: 'invoice', outputName: '发票识别', utmSource: 'dingdingzdjj-fp', i18n: { 'zh-CN': { fieldName: '发票+明细（ADP）' } } },
   { id: 'passport', outputName: '护照识别' },
 ];
 const originalReadme = '# 钉钉测试项目\n\n原有简介。\n\n## 调试\n\n保留操作说明。\n';
@@ -49,7 +49,9 @@ function update(root, build) {
 test('download table links real Chinese package names with original version and Shanghai time', (t) => {
   const root = fixture(t);
   const readme = update(root, buildFixture(root, ['invoice', 'passport']));
-  assert.ok(readme.includes('| 英文 ID | 安装包（点击下载） | 版本 | 打包时间 |'));
+  assert.ok(readme.includes('| 英文 ID | 安装包（点击下载） | 版本 | 打包时间 | utm_source |'));
+  assert.ok(readme.includes('| `dingdingzdjj-fp` |'));
+  assert.ok(readme.includes('| `dingdingzdjj-passport` |'));
   assert.ok(readme.includes('发票+明细（ADP）20261019.zip'));
   assert.ok(readme.includes('`1.2.3` | `2026-10-19 02:20:30 +08:00`'));
   const links = [...readme.matchAll(/\]\((\.\/output\/downloads\/[^)]+)\)/g)];

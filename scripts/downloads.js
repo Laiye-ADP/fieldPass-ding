@@ -54,8 +54,8 @@ function updateReadmeDownloads(rootDir, definitions, artifacts, outputRoot) {
     '',
     '> 运行 `npm run pack:all` 会生成全部安装包并自动刷新此下载表；单独打包只更新对应捷径。',
     '',
-    '| 英文 ID | 安装包（点击下载） | 版本 | 打包时间 |',
-    '| --- | --- | --- | --- |',
+    '| 英文 ID | 安装包（点击下载） | 版本 | 打包时间 | utm_source |',
+    '| --- | --- | --- | --- | --- |',
   ];
   for (const definition of definitions) {
     const metadataPath = path.join(downloadsDir, definition.id, 'shortcut.json');
@@ -67,7 +67,8 @@ function updateReadmeDownloads(rootDir, definitions, artifacts, outputRoot) {
     }
     const time = `${shanghaiTime(info.packedAt).slice(0, 19).replace('T', ' ')} +08:00`;
     const href = `./output/downloads/${definition.id}/${encodeURIComponent(info.zip)}`;
-    lines.push(`| \`${definition.id}\` | [${info.zip}](${href}) | \`${info.version}\` | \`${time}\` |`);
+    const utmSource = definition.utmSource || `dingdingzdjj-${definition.id}`;
+    lines.push(`| \`${definition.id}\` | [${info.zip}](${href}) | \`${info.version}\` | \`${time}\` | \`${utmSource}\` |`);
   }
   lines.push(endMarker);
   const section = lines.join('\n');
