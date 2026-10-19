@@ -7,6 +7,7 @@ const vm = require('vm');
 const zlib = require('zlib');
 const readline = require('readline');
 const { createRequire } = require('module');
+const { updateReadmeDownloads } = require('./downloads');
 
 const rootDir = path.resolve(__dirname, '..');
 const productionAdpDomain = 'adp.laiye.com';
@@ -213,6 +214,8 @@ function validatePackage(zipPath, definition, config) {
 }
 
 async function build(definitions, config, runId) {
+  const packedAt = new Date().toISOString();
+  const { version } = readJson(path.join(rootDir, 'package.json'));
   const buildRoot = path.join(rootDir, '.field-shortcuts-build', runId);
   const outputRoot = path.join(rootDir, 'output', 'field-shortcuts', runId);
   const artifacts = [];
@@ -261,11 +264,13 @@ async function build(definitions, config, runId) {
     const zipName = `${definition.id}.zip`;
     fs.copyFileSync(sourceZip, path.join(artifactDir, zipName));
     writeJson(path.join(artifactDir, 'manifest.json'), checked.manifest);
-    const info = { id: definition.id, outputName: definition.outputName, zip: zipName, ...config, entries: checked.entries };
+    const info = { id: definition.id, outputName: definition.outputName, zip: zipName, version, packedAt, ...config, entries: checked.entries };
     writeJson(path.join(artifactDir, 'shortcut.json'), info);
     artifacts.push(info);
   }
   writeJson(path.join(outputRoot, 'build.json'), { builtAt: new Date().toISOString(), ...config, shortcuts: artifacts });
+  const manifest = readJson(path.join(rootDir, 'src', 'field-shortcuts.json'));
+  updateReadmeDownloads(rootDir, manifest.shortcuts, artifacts, outputRoot);
   console.log(`已生成并验证 ${artifacts.length} 个钉钉安装包：${outputRoot}`);
 }
 

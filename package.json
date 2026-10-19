@@ -12,7 +12,7 @@
     "pack": "node scripts/field-shortcuts.js build",
     "pack:all": "node scripts/field-shortcuts.js build --all",
     "pack:shortcut": "node scripts/field-shortcuts.js build",
-    "test": "node --test tests/adp-contract.test.cjs",
+    "test": "node --test tests/adp-contract.test.cjs tests/downloads.test.cjs",
     "typecheck": "tsc --noEmit --project tsconfig.json"
   },
   "author": "",

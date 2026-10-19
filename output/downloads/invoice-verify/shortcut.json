@@ -1,0 +1,18 @@
+{
+  "id": "invoice-verify",
+  "outputName": "发票验真",
+  "zip": "发票验真（ADP）20261019.zip",
+  "version": "1.0.0",
+  "packedAt": "2026-10-19T07:17:05.762Z",
+  "adpDomain": "adp.laiye.com",
+  "attachmentDomains": [
+    "dl.dingtalk.com",
+    "static.dingtalk.com",
+    "alidocs.dingtalk.com",
+    "alidocs2-zjk-cdn.dingtalk.com"
+  ],
+  "entries": [
+    "manifest.json",
+    "build/index.js"
+  ]
+}

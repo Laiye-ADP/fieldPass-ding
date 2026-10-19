@@ -1,0 +1,18 @@
+{
+  "id": "vat-invoice-full",
+  "outputName": "增值税发票识别-全字段",
+  "zip": "增值税发票识别（ADP）20261019.zip",
+  "version": "1.0.0",
+  "packedAt": "2026-10-19T07:17:05.762Z",
+  "adpDomain": "adp.laiye.com",
+  "attachmentDomains": [
+    "dl.dingtalk.com",
+    "static.dingtalk.com",
+    "alidocs.dingtalk.com",
+    "alidocs2-zjk-cdn.dingtalk.com"
+  ],
+  "entries": [
+    "manifest.json",
+    "build/index.js"
+  ]
+}

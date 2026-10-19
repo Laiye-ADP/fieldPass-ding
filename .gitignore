@@ -12,7 +12,8 @@ node_modules
 # production
 /build
 /pkg
-/output
+/output/*
+!/output/downloads/
 /.field-shortcuts-build
 /.field-shortcuts-dev
 
