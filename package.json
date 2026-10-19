@@ -1,0 +1,27 @@
+{
+  "name": "@laiye/adp-dingtalk-field-shortcuts",
+  "version": "1.0.0",
+  "description": "钉钉 AI 表格 ADP 字段捷径集合",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/field-shortcuts.js start",
+    "start:shortcut": "node scripts/field-shortcuts.js start",
+    "build": "node scripts/field-shortcuts.js build",
+    "build:all": "node scripts/field-shortcuts.js build --all",
+    "build:shortcut": "node scripts/field-shortcuts.js build",
+    "pack": "node scripts/field-shortcuts.js build",
+    "pack:all": "node scripts/field-shortcuts.js build --all",
+    "pack:shortcut": "node scripts/field-shortcuts.js build",
+    "test": "node --test tests/adp-contract.test.cjs",
+    "typecheck": "tsc --noEmit --project tsconfig.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dingtalk-docs-cool-app": "0.3.4",
+    "@types/node-fetch": "^2.6.12"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}

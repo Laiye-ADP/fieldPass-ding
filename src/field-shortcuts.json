@@ -1,0 +1,3164 @@
+{
+  "defaultShortcutId": "vat-invoice-full",
+  "shortcuts": [
+    {
+      "id": "vat-invoice-full",
+      "outputName": "增值税发票识别-全字段",
+      "utmSource": "dingdingzdjj-zzsfp",
+      "debugPrefix": "[ADP vat invoice full]",
+      "idPrefix": "vat-invoice",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_v9x2y5z8a1b4c7d0e3f6h9j1k4m7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "增值税发票识别（ADP）",
+          "fileLabel": "发票文件",
+          "filePlaceholder": "请选择发票文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）",
+          "authLabel": "ADP",
+          "apiKeyPlaceholder": "请填写 API key",
+          "id": "ID"
+        },
+        "en-US": {
+          "fieldName": "VAT Invoice Recognition (ADP)",
+          "fileLabel": "Invoice file",
+          "filePlaceholder": "Select an attachment field for the invoice file",
+          "authLabel": "ADP",
+          "apiKeyPlaceholder": "Enter API key",
+          "id": "ID"
+        },
+        "ja-JP": {
+          "fieldName": "VAT 発票認識（ADP）",
+          "fileLabel": "発票ファイル",
+          "filePlaceholder": "発票ファイルの添付フィールドを選択",
+          "authLabel": "ADP",
+          "apiKeyPlaceholder": "API key を入力",
+          "id": "ID"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "vat_invoice_haoma_large_size",
+          "label": "发票号码",
+          "primary": true,
+          "valueKeys": [
+            "invoice_number",
+            "vat_invoice_haoma_right_side",
+            "vat_invoice_haoma_large_size"
+          ]
+        },
+        {
+          "key": "vat_invoice_correct_code",
+          "label": "校验码",
+          "valueKeys": [
+            "verification_code",
+            "vat_invoice_correct_code",
+            "check_number"
+          ]
+        },
+        {
+          "key": "vat_invoice_issue_date",
+          "label": "开票日期",
+          "valueKeys": [
+            "issue_date",
+            "vat_invoice_issue_date",
+            "date_of_invoice"
+          ]
+        },
+        {
+          "key": "vat_invoice_daima_print",
+          "label": "发票代码",
+          "valueKeys": [
+            "invoice_code",
+            "vat_invoice_daima_print"
+          ]
+        },
+        {
+          "key": "vat_invoice_total_cover_tax",
+          "label": "价税合计大写",
+          "valueKeys": [
+            "total_amount_in_words",
+            "vat_invoice_total_cover_tax",
+            "total_money_big"
+          ]
+        },
+        {
+          "key": "vat_invoice_total_cover_tax_digits",
+          "label": "价税合计小写",
+          "valueKeys": [
+            "total_amount",
+            "vat_invoice_total_cover_tax_digits",
+            "total_money"
+          ]
+        },
+        {
+          "key": "vat_invoice_total_print",
+          "label": "金额合计",
+          "valueKeys": [
+            "amount_excluding_tax",
+            "vat_invoice_total_print"
+          ]
+        },
+        {
+          "key": "vat_invoice_tax_total",
+          "label": "税额合计",
+          "valueKeys": [
+            "tax_amount",
+            "vat_invoice_tax_total"
+          ]
+        },
+        {
+          "key": "vat_invoice_seller_name",
+          "label": "销售方名称",
+          "valueKeys": [
+            "seller_name",
+            "vat_invoice_seller_name",
+            "sold_name"
+          ]
+        },
+        {
+          "key": "vat_invoice_seller_id",
+          "label": "销售方纳税人识别号",
+          "valueKeys": [
+            "seller_tax_id",
+            "vat_invoice_seller_id",
+            "sold_tax_number"
+          ]
+        },
+        {
+          "key": "vat_invoice_seller_bank_account",
+          "label": "销售方开户行及帐号",
+          "valueKeys": [
+            "seller_bank_account",
+            "vat_invoice_seller_bank_account"
+          ]
+        },
+        {
+          "key": "vat_invoice_seller_addr_tell",
+          "label": "销售方地址、电话",
+          "valueKeys": [
+            "seller_address_phone",
+            "vat_invoice_seller_addr_tell"
+          ]
+        },
+        {
+          "key": "vat_invoice_payer_name",
+          "label": "购买方名称",
+          "valueKeys": [
+            "buyer_name",
+            "vat_invoice_payer_name",
+            "buy_name"
+          ]
+        },
+        {
+          "key": "vat_invoice_rate_payer_id",
+          "label": "购买方纳税人识别号",
+          "valueKeys": [
+            "buyer_tax_id",
+            "vat_invoice_rate_payer_id",
+            "buy_tax_number"
+          ]
+        },
+        {
+          "key": "vat_invoice_payer_bank_account",
+          "label": "购买方开户行及帐号",
+          "valueKeys": [
+            "buyer_bank_account",
+            "vat_invoice_payer_bank_account"
+          ]
+        },
+        {
+          "key": "vat_invoice_payer_addr_tell",
+          "label": "购买方地址、电话",
+          "valueKeys": [
+            "buyer_address_phone",
+            "vat_invoice_payer_addr_tell"
+          ]
+        },
+        {
+          "key": "vat_invoice_zhuan_yong_flag",
+          "label": "专票/普票",
+          "valueKeys": [
+            "invoice_tax_category",
+            "vat_invoice_zhuan_yong_flag"
+          ]
+        },
+        {
+          "key": "vat_invoice_type",
+          "label": "电子发票/非电子发票",
+          "valueKeys": [
+            "invoice_media_type",
+            "vat_invoice_type"
+          ]
+        },
+        {
+          "key": "vat_invoice_total_note",
+          "label": "备注",
+          "valueKeys": [
+            "remarks",
+            "vat_invoice_total_note"
+          ]
+        },
+        {
+          "key": "vat_invoice_cipher_field",
+          "label": "密码区",
+          "valueKeys": [
+            "cipher_text",
+            "vat_invoice_cipher_field"
+          ]
+        },
+        {
+          "key": "vat_invoice_drawer",
+          "label": "开票人",
+          "valueKeys": [
+            "issuer_name",
+            "vat_invoice_drawer"
+          ]
+        },
+        {
+          "key": "vat_invoice_review",
+          "label": "复核",
+          "valueKeys": [
+            "reviewer_name",
+            "vat_invoice_review"
+          ]
+        },
+        {
+          "key": "vat_invoice_payee",
+          "label": "收款人",
+          "valueKeys": [
+            "payee_name",
+            "vat_invoice_payee",
+            "cashier_name"
+          ]
+        },
+        {
+          "key": "vat_invoice_sub_type",
+          "label": "发票子类型（行业属性）",
+          "valueKeys": [
+            "invoice_industry_category",
+            "vat_invoice_sub_type"
+          ]
+        },
+        {
+          "key": "vat_invoice_title",
+          "label": "发票抬头",
+          "valueKeys": [
+            "invoice_title",
+            "vat_invoice_title",
+            "invoice_head"
+          ]
+        },
+        {
+          "key": "line_item_name",
+          "label": "项目明细-项目名称",
+          "valueKeys": [
+            "line_item_name",
+            "vat_invoice_goods"
+          ],
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_specification",
+          "label": "项目明细-规格型号",
+          "valueKeys": [
+            "line_item_specification",
+            "vat_invoice_plate_specific"
+          ],
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_unit",
+          "label": "项目明细-单位",
+          "valueKeys": [
+            "line_item_unit",
+            "vat_invoice_electrans_unit"
+          ],
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_quantity",
+          "label": "项目明细-数量",
+          "valueKeys": [
+            "line_item_quantity",
+            "vat_invoice_electrans_quantity"
+          ],
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_unit_price",
+          "label": "项目明细-单价",
+          "valueKeys": [
+            "line_item_unit_price",
+            "vat_invoice_electrans_unit_price"
+          ],
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_amount",
+          "label": "项目明细-金额",
+          "valueKeys": [
+            "line_item_amount",
+            "vat_invoice_price"
+          ],
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_tax_rate",
+          "label": "项目明细-税率/征收率",
+          "valueKeys": [
+            "line_item_tax_rate",
+            "vat_invoice_tax_rate_list"
+          ],
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_tax_amount",
+          "label": "项目明细-税额",
+          "valueKeys": [
+            "line_item_tax_amount",
+            "vat_invoice_tax_list"
+          ],
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_summary",
+          "label": "项目明细（汇总）",
+          "summaryFromKeySets": [
+            [
+              "line_item_name",
+              "line_item_specification",
+              "line_item_unit",
+              "line_item_quantity",
+              "line_item_unit_price",
+              "line_item_amount",
+              "line_item_tax_rate",
+              "line_item_tax_amount"
+            ],
+            [
+              "vat_invoice_goods",
+              "vat_invoice_plate_specific",
+              "vat_invoice_electrans_unit",
+              "vat_invoice_electrans_quantity",
+              "vat_invoice_electrans_unit_price",
+              "vat_invoice_price",
+              "vat_invoice_tax_rate_list",
+              "vat_invoice_tax_list"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "air-ticket",
+      "outputName": "飞机票识别",
+      "utmSource": "dingdingzdjj-fjp",
+      "debugPrefix": "[ADP air ticket]",
+      "idPrefix": "air-ticket",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_v9x2y5z8a1b4c7d0e3f6h9j1k4m7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "飞机票识别（ADP）",
+          "fileLabel": "飞机票文件",
+          "filePlaceholder": "请选择飞机票文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Air Ticket Recognition (ADP)",
+          "fileLabel": "Air ticket file",
+          "filePlaceholder": "Select an attachment field for the air ticket file"
+        },
+        "ja-JP": {
+          "fieldName": "航空券認識（ADP）",
+          "fileLabel": "航空券ファイル",
+          "filePlaceholder": "航空券ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "domestic_international_type",
+          "label": "国内国际标识",
+          "primary": true
+        },
+        {
+          "key": "invoice_number",
+          "label": "发票号码"
+        },
+        {
+          "key": "passenger_name",
+          "label": "旅客姓名"
+        },
+        {
+          "key": "passenger_id",
+          "label": "身份证件号码"
+        },
+        {
+          "key": "departure_location",
+          "label": "出发地（城市-机场名）"
+        },
+        {
+          "key": "arrival_location",
+          "label": "到达站（城市-机场名）"
+        },
+        {
+          "key": "carrier",
+          "label": "承运人"
+        },
+        {
+          "key": "flight_number",
+          "label": "航班号"
+        },
+        {
+          "key": "flight_date",
+          "label": "航班日期"
+        },
+        {
+          "key": "flight_time",
+          "label": "航班时间"
+        },
+        {
+          "key": "seat_class",
+          "label": "座位等级"
+        },
+        {
+          "key": "tax_rate",
+          "label": "增值税税率"
+        },
+        {
+          "key": "tax_amount",
+          "label": "增值税税额"
+        },
+        {
+          "key": "other_taxes",
+          "label": "其他税费"
+        },
+        {
+          "key": "total_amount",
+          "label": "合计金额"
+        },
+        {
+          "key": "e_ticket_number",
+          "label": "电子客票号码"
+        },
+        {
+          "key": "issuing_entity",
+          "label": "填开单位"
+        },
+        {
+          "key": "issue_date",
+          "label": "填开日期"
+        },
+        {
+          "key": "buyer_name",
+          "label": "购买方名称"
+        },
+        {
+          "key": "buyer_tax_id",
+          "label": "购买方纳税人识别号"
+        }
+      ]
+    },
+    {
+      "id": "procurement-order",
+      "outputName": "采购订单识别",
+      "utmSource": "dingdingzdjj-cgdd",
+      "debugPrefix": "[ADP procurement order]",
+      "idPrefix": "procurement-order",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "source": "fileUrl",
+        "appId": "ootb_m9n2p5q8r1t4v7w0x3y6z9a2b5",
+        "acceptLanguage": "zh",
+        "fileUrlKey": "file_url",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "采购订单识别（ADP）",
+          "fileLabel": "采购订单文件",
+          "filePlaceholder": "请选择采购订单文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Purchase Order Recognition (ADP)",
+          "fileLabel": "Purchase order file",
+          "filePlaceholder": "Select an attachment field for the purchase order file"
+        },
+        "ja-JP": {
+          "fieldName": "購買注文書認識（ADP）",
+          "fileLabel": "購買注文書ファイル",
+          "filePlaceholder": "購買注文書ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "po_number",
+          "label": "订单编号",
+          "primary": true
+        },
+        {
+          "key": "order_date",
+          "label": "订单日期"
+        },
+        {
+          "key": "seller_name",
+          "label": "卖方名称"
+        },
+        {
+          "key": "buyer_name",
+          "label": "买方/客户名称"
+        },
+        {
+          "key": "buyer_address",
+          "label": "买方/客户地址"
+        },
+        {
+          "key": "receiver_name",
+          "label": "收货方名称"
+        },
+        {
+          "key": "delivery_address",
+          "label": "客户收货地址"
+        },
+        {
+          "key": "currency",
+          "label": "币种"
+        },
+        {
+          "key": "total_amount",
+          "label": "总金额"
+        },
+        {
+          "key": "line_items_material_code",
+          "label": "商品明细-物料代码",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_tax_rate",
+          "label": "商品明细-税率",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_description",
+          "label": "商品明细-描述",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_quantity",
+          "label": "商品明细-数量",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_unit_price_inc_tax",
+          "label": "商品明细-单价（含税）",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_total_amount_inc_tax",
+          "label": "商品明细-总金额（含税）",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_delivery_date",
+          "label": "商品明细-交货日期",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_summary",
+          "label": "商品明细（汇总）",
+          "summaryFromKeys": [
+            "line_items_material_code",
+            "line_items_tax_rate",
+            "line_items_description",
+            "line_items_quantity",
+            "line_items_unit_price_inc_tax",
+            "line_items_total_amount_inc_tax",
+            "line_items_delivery_date"
+          ],
+          "summaryRowDelimiter": "|"
+        }
+      ]
+    },
+    {
+      "id": "customs-declaration",
+      "outputName": "海关报关单识别",
+      "utmSource": "dingdingzdjj-hgbgd",
+      "debugPrefix": "[ADP customs declaration]",
+      "idPrefix": "customs-declaration",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_v9x2y5z8a1b4c7d0e3f6h9j1k4m7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "海关报关单识别（ADP）",
+          "fileLabel": "海关报关单文件",
+          "filePlaceholder": "请选择海关报关单文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Customs Declaration Recognition (ADP)",
+          "fileLabel": "Customs declaration file",
+          "filePlaceholder": "Select an attachment field for the customs declaration file"
+        },
+        "ja-JP": {
+          "fieldName": "税関申告書認識（ADP）",
+          "fileLabel": "税関申告書ファイル",
+          "filePlaceholder": "税関申告書ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "invoice_title",
+          "label": "发票抬头",
+          "primary": true
+        },
+        {
+          "key": "invoice_number",
+          "label": "发票号码"
+        },
+        {
+          "key": "pre_entry_number",
+          "label": "预录入编号"
+        },
+        {
+          "key": "customs_number",
+          "label": "海关编号"
+        },
+        {
+          "key": "registration_number",
+          "label": "备案号"
+        },
+        {
+          "key": "entry_or_exit_port",
+          "label": "入境/离境口岸"
+        },
+        {
+          "key": "import_or_export_date",
+          "label": "出口/进口日期"
+        },
+        {
+          "key": "declaration_date",
+          "label": "申报日期"
+        },
+        {
+          "key": "domestic_operator_name",
+          "label": "境内发货人/收货人企业名称"
+        },
+        {
+          "key": "domestic_operator_social_credit_code",
+          "label": "境内发货人/收货人社会信用代码"
+        },
+        {
+          "key": "transport_mode",
+          "label": "运输方式"
+        },
+        {
+          "key": "transport_vehicle_and_voyage_number",
+          "label": "运输工具名称及航次号"
+        },
+        {
+          "key": "bill_of_lading_number",
+          "label": "提运单号"
+        },
+        {
+          "key": "production_or_consumption_entity_name",
+          "label": "生产销售/消费使用单位企业名称"
+        },
+        {
+          "key": "production_or_consumption_entity_social_credit_code",
+          "label": "生产销售/消费使用单位企业社会信用代码"
+        },
+        {
+          "key": "levy_exemption_nature",
+          "label": "征免性质"
+        },
+        {
+          "key": "license_number",
+          "label": "许可证号"
+        },
+        {
+          "key": "departure_or_destination_country",
+          "label": "启运国 / 运抵国 (地区)"
+        },
+        {
+          "key": "departure_port",
+          "label": "启运港"
+        },
+        {
+          "key": "transaction_method",
+          "label": "成交方式"
+        },
+        {
+          "key": "freight_amount",
+          "label": "运费"
+        },
+        {
+          "key": "insurance_premium",
+          "label": "保费"
+        },
+        {
+          "key": "miscellaneous_charges",
+          "label": "杂费"
+        },
+        {
+          "key": "package_count",
+          "label": "件数"
+        },
+        {
+          "key": "package_type",
+          "label": "包装种类"
+        },
+        {
+          "key": "gross_weight",
+          "label": "毛重"
+        },
+        {
+          "key": "net_weight",
+          "label": "净重"
+        },
+        {
+          "key": "contract_agreement_number",
+          "label": "合同协议号"
+        },
+        {
+          "key": "supporting_document_number",
+          "label": "随附单证及编号"
+        },
+        {
+          "key": "marks_and_remarks",
+          "label": "标记唛码及备注"
+        },
+        {
+          "key": "line_item_number",
+          "label": "项目明细-项目序号",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_code",
+          "label": "项目明细-商品编号",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_name",
+          "label": "项目明细-项目/商品名称",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_specification",
+          "label": "项目明细-规格型号",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_origin_country",
+          "label": "项目明细-原产国（地区）",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_destination_country",
+          "label": "项目明细-最终目的国（地区）",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_domestic_area",
+          "label": "项目明细-境内目的地 / 货源地",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_exemption",
+          "label": "项目明细-征免",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_summary",
+          "label": "项目明细（汇总）",
+          "summaryFromKeys": [
+            "line_item_number",
+            "line_item_code",
+            "line_item_name",
+            "line_item_specification",
+            "line_item_origin_country",
+            "line_item_destination_country",
+            "line_item_domestic_area",
+            "line_item_exemption"
+          ],
+          "summaryRowDelimiter": "|"
+        }
+      ]
+    },
+    {
+      "id": "customs-payment-book",
+      "outputName": "海关缴费书识别",
+      "utmSource": "dingdingzdjj-hgjfs",
+      "debugPrefix": "[ADP customs payment book]",
+      "idPrefix": "customs-payment-book",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_v9x2y5z8a1b4c7d0e3f6h9j1k4m7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "海关缴费书识别（ADP）",
+          "fileLabel": "海关缴费书文件",
+          "filePlaceholder": "请选择海关缴费书文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Customs Payment Book Recognition (ADP)",
+          "fileLabel": "Customs payment book file",
+          "filePlaceholder": "Select an attachment field for the customs payment book file"
+        },
+        "ja-JP": {
+          "fieldName": "税関納付書認識（ADP）",
+          "fileLabel": "税関納付書ファイル",
+          "filePlaceholder": "税関納付書ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "invoice_title",
+          "label": "发票抬头",
+          "primary": true
+        },
+        {
+          "key": "invoice_number",
+          "label": "发票号码"
+        },
+        {
+          "key": "issue_date",
+          "label": "开票日期"
+        },
+        {
+          "key": "revenue_system",
+          "label": "收入系统"
+        },
+        {
+          "key": "revenue_authority_name",
+          "label": "收入机关"
+        },
+        {
+          "key": "revenue_subject",
+          "label": "收款单位科目"
+        },
+        {
+          "key": "budget_level",
+          "label": "预算级次"
+        },
+        {
+          "key": "treasury_name",
+          "label": "收款国库名称"
+        },
+        {
+          "key": "payer_name",
+          "label": "缴款单位名称"
+        },
+        {
+          "key": "payer_bank_account",
+          "label": "缴款单位账号"
+        },
+        {
+          "key": "payer_bank_name",
+          "label": "缴款单位开户银行"
+        },
+        {
+          "key": "total_amount_in_words",
+          "label": "价税合计大写"
+        },
+        {
+          "key": "total_amount",
+          "label": "价税合计小写"
+        },
+        {
+          "key": "applicant_unit_number",
+          "label": "申请单位编号"
+        },
+        {
+          "key": "customs_declaration_number",
+          "label": "报关单编号"
+        },
+        {
+          "key": "contract_agreement_number",
+          "label": "合同协议号"
+        },
+        {
+          "key": "transport_vehicle_number",
+          "label": "运输工具（号）"
+        },
+        {
+          "key": "payment_deadline",
+          "label": "缴款期限"
+        },
+        {
+          "key": "bill_of_lading_number",
+          "label": "提/装货单号"
+        },
+        {
+          "key": "invoice_address",
+          "label": "缴款地址"
+        },
+        {
+          "key": "line_item_number",
+          "label": "项目明细-项目序号",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_tax_code",
+          "label": "项目明细-税号",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_name",
+          "label": "项目明细-项目/商品名称",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_quantity",
+          "label": "项目明细-数量",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_unit",
+          "label": "项目明细-单位",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_dutiable_value",
+          "label": "项目明细-完税价格",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_tax_rate",
+          "label": "项目明细-税率",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_tax_amount",
+          "label": "项目明细-税款金额",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_summary",
+          "label": "项目明细（汇总）",
+          "summaryFromKeys": [
+            "line_item_number",
+            "line_item_tax_code",
+            "line_item_name",
+            "line_item_quantity",
+            "line_item_unit",
+            "line_item_dutiable_value",
+            "line_item_tax_rate",
+            "line_item_tax_amount"
+          ],
+          "summaryRowDelimiter": "|"
+        },
+        {
+          "key": "remarks",
+          "label": "备注"
+        }
+      ]
+    },
+    {
+      "id": "motor-vehicle-sales-invoice",
+      "outputName": "机动车销售发票识别",
+      "utmSource": "dingdingzdjj-jdcxsfp",
+      "debugPrefix": "[ADP motor vehicle sales invoice]",
+      "idPrefix": "motor-vehicle-sales-invoice",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_v9x2y5z8a1b4c7d0e3f6h9j1k4m7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "机动车销售发票识别（ADP）",
+          "fileLabel": "机动车销售发票文件",
+          "filePlaceholder": "请选择机动车销售发票文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Motor Vehicle Sales Invoice Recognition (ADP)",
+          "fileLabel": "Motor vehicle sales invoice file",
+          "filePlaceholder": "Select an attachment field for the motor vehicle sales invoice"
+        },
+        "ja-JP": {
+          "fieldName": "自動車販売請求書認識（ADP）",
+          "fileLabel": "自動車販売請求書ファイル",
+          "filePlaceholder": "自動車販売請求書ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "invoice_title",
+          "label": "发票抬头",
+          "primary": true
+        },
+        {
+          "key": "expense_category",
+          "label": "消费/服务类型"
+        },
+        {
+          "key": "invoice_number",
+          "label": "发票号码"
+        },
+        {
+          "key": "invoice_code",
+          "label": "发票代码"
+        },
+        {
+          "key": "issue_date",
+          "label": "开票日期"
+        },
+        {
+          "key": "buyer_name",
+          "label": "购货方名称"
+        },
+        {
+          "key": "buyer_phone",
+          "label": "购买方电话号码"
+        },
+        {
+          "key": "buyer_tax_id",
+          "label": "购货方纳税人识别号"
+        },
+        {
+          "key": "buyer_identity_or_organization_code",
+          "label": "购买方身份证号码或组织机构代码"
+        },
+        {
+          "key": "vehicle_license_plate_number",
+          "label": "车牌照号"
+        },
+        {
+          "key": "vehicle_registration_certificate_number",
+          "label": "登记证号"
+        },
+        {
+          "key": "vehicle_type",
+          "label": "车辆类型"
+        },
+        {
+          "key": "vehicle_model",
+          "label": "厂牌型号"
+        },
+        {
+          "key": "vehicle_origin",
+          "label": "产地"
+        },
+        {
+          "key": "vehicle_certificate_number",
+          "label": "合格证号"
+        },
+        {
+          "key": "vehicle_import_certificate_number",
+          "label": "进口证明书号"
+        },
+        {
+          "key": "vehicle_commodity_inspection_number",
+          "label": "商检单号"
+        },
+        {
+          "key": "vehicle_engine_number",
+          "label": "发动机号码"
+        },
+        {
+          "key": "vehicle_identification_number",
+          "label": "车辆识别代号/车架号"
+        },
+        {
+          "key": "vehicle_tonnage",
+          "label": "吨位"
+        },
+        {
+          "key": "vehicle_passenger_capacity",
+          "label": "限乘人数"
+        },
+        {
+          "key": "transfer_in_vehicle_management_office_name",
+          "label": "转入地车辆管理所名称"
+        },
+        {
+          "key": "total_amount_in_words",
+          "label": "价税合计大写"
+        },
+        {
+          "key": "total_amount",
+          "label": "价税合计小写"
+        },
+        {
+          "key": "tax_amount",
+          "label": "增值税税额"
+        },
+        {
+          "key": "tax_rate",
+          "label": "增值税税率"
+        },
+        {
+          "key": "amount_excluding_tax",
+          "label": "不含税价"
+        },
+        {
+          "key": "seller_name",
+          "label": "销货单位名称"
+        },
+        {
+          "key": "seller_identity_or_organization_code",
+          "label": "销货方身份证号码/组织机构代码"
+        },
+        {
+          "key": "seller_phone",
+          "label": "销货方电话"
+        },
+        {
+          "key": "seller_tax_id",
+          "label": "销货方纳税人识别号"
+        },
+        {
+          "key": "seller_bank_account",
+          "label": "销货方银行账号"
+        },
+        {
+          "key": "tax_authority_name",
+          "label": "主管税务机关"
+        },
+        {
+          "key": "tax_authority_code",
+          "label": "主管税务代码"
+        },
+        {
+          "key": "tax_payment_certificate_number",
+          "label": "完税凭证号"
+        },
+        {
+          "key": "auction_entity_name",
+          "label": "经营、拍卖单位"
+        },
+        {
+          "key": "vehicle_market_name",
+          "label": "二手车市场"
+        },
+        {
+          "key": "issuer_name",
+          "label": "开票人"
+        }
+      ]
+    },
+    {
+      "id": "tax-payment-certificate",
+      "outputName": "完税证明识别",
+      "utmSource": "dingdingzdjj-wszm",
+      "debugPrefix": "[ADP tax payment certificate]",
+      "idPrefix": "tax-payment-certificate",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_v9x2y5z8a1b4c7d0e3f6h9j1k4m7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "完税证明识别（ADP）",
+          "fileLabel": "完税证明文件",
+          "filePlaceholder": "请选择完税证明文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Tax Payment Certificate Recognition (ADP)",
+          "fileLabel": "Tax payment certificate file",
+          "filePlaceholder": "Select an attachment field for the tax payment certificate file"
+        },
+        "ja-JP": {
+          "fieldName": "納税証明書認識（ADP）",
+          "fileLabel": "納税証明書ファイル",
+          "filePlaceholder": "納税証明書ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "invoice_title",
+          "label": "发票抬头",
+          "primary": true
+        },
+        {
+          "key": "issue_date",
+          "label": "发票日期"
+        },
+        {
+          "key": "tax_authority_name",
+          "label": "税务机关"
+        },
+        {
+          "key": "invoice_number",
+          "label": "票据编号"
+        },
+        {
+          "key": "taxpayer_tax_id",
+          "label": "纳税人识别号"
+        },
+        {
+          "key": "taxpayer_name",
+          "label": "纳税人名称"
+        },
+        {
+          "key": "total_amount",
+          "label": "价税合计小写"
+        },
+        {
+          "key": "total_amount_in_words",
+          "label": "价税合计大写"
+        },
+        {
+          "key": "issuer_name",
+          "label": "填票人"
+        },
+        {
+          "key": "remarks",
+          "label": "备注"
+        },
+        {
+          "key": "line_item_original_document_number",
+          "label": "项目明细-原凭证号",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_tax_type",
+          "label": "项目明细-税种",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_name",
+          "label": "项目明细-品目名称",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_tax_period",
+          "label": "项目明细-税款所属时期",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_treasury_entry_or_refund_date",
+          "label": "项目明细-入（退）库日期",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_amount",
+          "label": "项目明细-实缴（退）金额",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_summary",
+          "label": "项目明细-汇总",
+          "summaryFromKeys": [
+            "line_item_original_document_number",
+            "line_item_tax_type",
+            "line_item_name",
+            "line_item_tax_period",
+            "line_item_treasury_entry_or_refund_date",
+            "line_item_amount"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "train-ticket",
+      "outputName": "火车票识别",
+      "utmSource": "dingdingzdjj-hcp",
+      "debugPrefix": "[ADP train ticket]",
+      "idPrefix": "train-ticket",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_v9x2y5z8a1b4c7d0e3f6h9j1k4m7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "火车票识别（ADP）",
+          "fileLabel": "火车票文件",
+          "filePlaceholder": "请选择火车票文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Train Ticket Recognition (ADP)",
+          "fileLabel": "Train ticket file",
+          "filePlaceholder": "Select an attachment field for the train ticket file"
+        },
+        "ja-JP": {
+          "fieldName": "鉄道乗車券認識（ADP）",
+          "fileLabel": "鉄道乗車券ファイル",
+          "filePlaceholder": "鉄道乗車券ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "expense_category",
+          "label": "发票消费类型",
+          "primary": true
+        },
+        {
+          "key": "invoice_number",
+          "label": "发票号码"
+        },
+        {
+          "key": "issue_date",
+          "label": "开票日期"
+        },
+        {
+          "key": "departure_station",
+          "label": "出发地"
+        },
+        {
+          "key": "arrival_station",
+          "label": "目的地"
+        },
+        {
+          "key": "train_number",
+          "label": "车次号"
+        },
+        {
+          "key": "travel_date",
+          "label": "乘车日期"
+        },
+        {
+          "key": "departure_time",
+          "label": "发车时间"
+        },
+        {
+          "key": "seat_number",
+          "label": "座位号"
+        },
+        {
+          "key": "seat_class",
+          "label": "座位类别"
+        },
+        {
+          "key": "total_amount",
+          "label": "合计金额"
+        },
+        {
+          "key": "passenger_id",
+          "label": "乘客身份证"
+        },
+        {
+          "key": "passenger_name",
+          "label": "乘客名称"
+        },
+        {
+          "key": "e_ticket_number",
+          "label": "电子客票号码"
+        },
+        {
+          "key": "buyer_name",
+          "label": "购买方名称"
+        },
+        {
+          "key": "buyer_tax_id",
+          "label": "购买方纳税人识别号"
+        },
+        {
+          "key": "is_refund_fee",
+          "label": "是否为退票费"
+        },
+        {
+          "key": "is_change_fee",
+          "label": "是否为改签费"
+        }
+      ]
+    },
+    {
+      "id": "medical-bill",
+      "outputName": "医疗票据识别",
+      "utmSource": "dingdingzdjj-ylpj",
+      "debugPrefix": "[ADP medical bill]",
+      "idPrefix": "medical-bill",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_v9x2y5z8a1b4c7d0e3f6h9j1k4m7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "医疗票据识别（ADP）",
+          "fileLabel": "医疗票据文件",
+          "filePlaceholder": "请选择医疗票据文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Medical Bill Recognition (ADP)",
+          "fileLabel": "Medical bill file",
+          "filePlaceholder": "Select an attachment field for the medical bill file"
+        },
+        "ja-JP": {
+          "fieldName": "医療領収書認識（ADP）",
+          "fileLabel": "医療領収書ファイル",
+          "filePlaceholder": "医療領収書ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "invoice_title",
+          "label": "发票抬头",
+          "primary": true
+        },
+        {
+          "key": "invoice_number",
+          "label": "票据号码"
+        },
+        {
+          "key": "invoice_code",
+          "label": "票据代码"
+        },
+        {
+          "key": "payer_name",
+          "label": "交款人"
+        },
+        {
+          "key": "verification_code",
+          "label": "校验码"
+        },
+        {
+          "key": "issue_date",
+          "label": "开票日期"
+        },
+        {
+          "key": "total_amount_in_words",
+          "label": "价税合计大写"
+        },
+        {
+          "key": "total_amount",
+          "label": "价税合计小写"
+        },
+        {
+          "key": "personal_payment_amount",
+          "label": "个人自费"
+        },
+        {
+          "key": "payee_name",
+          "label": "收款单位"
+        }
+      ]
+    },
+    {
+      "id": "overseas-invoice-fast",
+      "outputName": "海外票据（发票+收据）抽取",
+      "utmSource": "dingdingzdjj-hwfp",
+      "debugPrefix": "[ADP overseas invoice fast]",
+      "idPrefix": "overseas-invoice",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_r3s6t9u2v5w8x1y4z7a0b3c6d9e2",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "body": {
+          "enable_multi_ticket": true
+        }
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "海外票据（发票+收据）抽取（ADP）",
+          "fileLabel": "海外发票或收据文件",
+          "filePlaceholder": "请选择海外发票或收据文件所在字段（支持 JPG/JPEG/PNG/PDF 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Overseas Invoice & Receipt Extraction (ADP)",
+          "fileLabel": "Overseas invoice or receipt file",
+          "filePlaceholder": "Select an attachment field for the overseas invoice or receipt file"
+        },
+        "ja-JP": {
+          "fieldName": "海外請求書・領収書抽出（ADP）",
+          "fileLabel": "海外請求書または領収書ファイル",
+          "filePlaceholder": "海外請求書または領収書ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "country_code",
+          "label": "国家/地区",
+          "primary": true
+        },
+        {
+          "key": "ticket_type",
+          "label": "票据类型"
+        },
+        {
+          "key": "invoice_number",
+          "label": "发票/收据号码"
+        },
+        {
+          "key": "invoice_date",
+          "label": "发票/收据日期"
+        },
+        {
+          "key": "supplier_name",
+          "label": "供应商名称"
+        },
+        {
+          "key": "supplier_vat_address",
+          "label": "供应商地址"
+        },
+        {
+          "key": "supplier_vat_number",
+          "label": "供应商增值税号"
+        },
+        {
+          "key": "supplier_phone",
+          "label": "供应商电话"
+        },
+        {
+          "key": "supplier_bank_name",
+          "label": "供应商开户行"
+        },
+        {
+          "key": "supplier_account_number",
+          "label": "供应商账号"
+        },
+        {
+          "key": "customer_name",
+          "label": "客户名称"
+        },
+        {
+          "key": "customer_address",
+          "label": "客户地址"
+        },
+        {
+          "key": "customer_vat_number",
+          "label": "客户增值税号"
+        },
+        {
+          "key": "customer_phone",
+          "label": "客户电话"
+        },
+        {
+          "key": "currency",
+          "label": "币种"
+        },
+        {
+          "key": "total_without_tax",
+          "label": "总额（未税）"
+        },
+        {
+          "key": "vat_rate",
+          "label": "增值税税率"
+        },
+        {
+          "key": "vat_amount",
+          "label": "增值税金额"
+        },
+        {
+          "key": "total_tax",
+          "label": "总税额"
+        },
+        {
+          "key": "total_amount",
+          "label": "总金额"
+        },
+        {
+          "key": "amount_due",
+          "label": "应付金额"
+        },
+        {
+          "key": "line_items_item_code",
+          "label": "商品明细-项目代码",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_description",
+          "label": "商品明细-描述",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_quantity",
+          "label": "商品明细-数量",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_unit_price",
+          "label": "商品明细-单价",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_rate",
+          "label": "商品明细-税率",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_tax",
+          "label": "商品明细-税金",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_total_amount",
+          "label": "商品明细-总金额",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_items_summary",
+          "label": "商品明细（汇总）",
+          "summaryFromKeys": [
+            "line_items_item_code",
+            "line_items_description",
+            "line_items_quantity",
+            "line_items_unit_price",
+            "line_items_rate",
+            "line_items_tax",
+            "line_items_total_amount"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxi-ride",
+      "outputName": "出租及网约车单据识别",
+      "utmSource": "dingdingzdjj-czcwyc",
+      "debugPrefix": "[ADP taxi ride]",
+      "idPrefix": "taxi-ride",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_v9x2y5z8a1b4c7d0e3f6h9j1k4m7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "出租及网约车单据识别（ADP）",
+          "fileLabel": "出租及网约车单据文件",
+          "filePlaceholder": "请选择出租及网约车单据文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Taxi and Ride-hailing Receipt Recognition (ADP)",
+          "fileLabel": "Taxi and ride-hailing receipt file",
+          "filePlaceholder": "Select an attachment field for the taxi and ride-hailing receipt file"
+        },
+        "ja-JP": {
+          "fieldName": "タクシー・配車領収書認識（ADP）",
+          "fileLabel": "タクシー・配車領収書ファイル",
+          "filePlaceholder": "タクシー・配車領収書ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "invoice_title",
+          "label": "发票抬头",
+          "primary": true
+        },
+        {
+          "key": "invoice_code",
+          "label": "发票代码"
+        },
+        {
+          "key": "invoice_number",
+          "label": "发票号码"
+        },
+        {
+          "key": "issue_date",
+          "label": "填开日期"
+        },
+        {
+          "key": "trip_start_date",
+          "label": "行程开始日期"
+        },
+        {
+          "key": "trip_end_date",
+          "label": "行程结束日期"
+        },
+        {
+          "key": "distance",
+          "label": "里程"
+        },
+        {
+          "key": "vehicle_number",
+          "label": "车号"
+        },
+        {
+          "key": "total_amount",
+          "label": "合计金额"
+        },
+        {
+          "key": "passenger_phone",
+          "label": "行程人手机号"
+        },
+        {
+          "key": "line_item_departure",
+          "label": "行程明细-起点",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_city",
+          "label": "行程明细-城市",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_destination",
+          "label": "行程明细-终点",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_pickup_datetime",
+          "label": "行程明细-上车时间",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_distance",
+          "label": "行程明细-里程",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_amount",
+          "label": "行程明细-金额",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_vehicle_type",
+          "label": "行程明细-车型",
+          "takeFirstArrayValue": true
+        },
+        {
+          "key": "line_item_summary",
+          "label": "行程明细（汇总）",
+          "summaryFromKeys": [
+            "line_item_departure",
+            "line_item_city",
+            "line_item_destination",
+            "line_item_pickup_datetime",
+            "line_item_distance",
+            "line_item_amount",
+            "line_item_vehicle_type"
+          ],
+          "summaryRowDelimiter": "|"
+        }
+      ]
+    },
+    {
+      "id": "road-toll",
+      "outputName": "路桥通行费发票识别",
+      "utmSource": "dingdingzdjj-lqtxf",
+      "debugPrefix": "[ADP road toll]",
+      "idPrefix": "road-toll",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_v9x2y5z8a1b4c7d0e3f6h9j1k4m7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "路桥通行费发票识别（ADP）",
+          "fileLabel": "路桥通行费发票文件",
+          "filePlaceholder": "请选择路桥通行费发票文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Road Toll Invoice Recognition (ADP)",
+          "fileLabel": "Road toll invoice file",
+          "filePlaceholder": "Select an attachment field for the road toll invoice file"
+        },
+        "ja-JP": {
+          "fieldName": "道路通行料請求書認識（ADP）",
+          "fileLabel": "道路通行料請求書ファイル",
+          "filePlaceholder": "道路通行料請求書ファイルの添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "expense_category",
+          "label": "发票消费类型",
+          "primary": true
+        },
+        {
+          "key": "invoice_number",
+          "label": "发票号码"
+        },
+        {
+          "key": "toll_entrance",
+          "label": "入口"
+        },
+        {
+          "key": "toll_exit",
+          "label": "出口"
+        },
+        {
+          "key": "is_highway_toll",
+          "label": "是否为高速票"
+        },
+        {
+          "key": "total_amount",
+          "label": "收费金额",
+          "valueKeys": [
+            "toll_amount",
+            "total_amount"
+          ]
+        },
+        {
+          "key": "toll_date",
+          "label": "收费日期"
+        },
+        {
+          "key": "toll_time",
+          "label": "收费时间"
+        }
+      ]
+    },
+    {
+      "id": "invoice-verify",
+      "outputName": "发票验真",
+      "utmSource": "dingdingzdjj-fpyz",
+      "debugPrefix": "[ADP invoice verify]",
+      "idPrefix": "invoice-verify",
+      "adp": {
+        "endpoint": "/app/invoice/verify",
+        "source": "formParams",
+        "acceptLanguage": "zh",
+        "paramKeys": [
+          "fpNumber",
+          "fpDate",
+          "fpAmount"
+        ]
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "发票验真（ADP）",
+          "authLabel": "ADP",
+          "apiKeyPlaceholder": "请填写 API key",
+          "id": "ID",
+          "fpNumberLabel": "发票号码",
+          "fpNumberPlaceholder": "请选择发票号码字段",
+          "fpDateLabel": "开票日期",
+          "fpDatePlaceholder": "请选择开票日期字段",
+          "fpAmountLabel": "价税合计",
+          "fpAmountPlaceholder": "请选择价税合计字段"
+        },
+        "en-US": {
+          "fieldName": "Invoice Verification (ADP)",
+          "authLabel": "ADP",
+          "apiKeyPlaceholder": "Enter API key",
+          "id": "ID",
+          "fpNumberLabel": "Invoice number",
+          "fpNumberPlaceholder": "Select the invoice number field",
+          "fpDateLabel": "Invoice date",
+          "fpDatePlaceholder": "Select the invoice date field",
+          "fpAmountLabel": "Total amount with tax",
+          "fpAmountPlaceholder": "Select the total amount field"
+        },
+        "ja-JP": {
+          "fieldName": "発票真偽確認（ADP）",
+          "authLabel": "ADP",
+          "apiKeyPlaceholder": "API key を入力",
+          "id": "ID",
+          "fpNumberLabel": "発票番号",
+          "fpNumberPlaceholder": "発票番号フィールドを選択",
+          "fpDateLabel": "発票日付",
+          "fpDatePlaceholder": "発票日付フィールドを選択",
+          "fpAmountLabel": "税込合計",
+          "fpAmountPlaceholder": "税込合計フィールドを選択"
+        }
+      },
+      "formItems": [
+        {
+          "key": "fpNumber",
+          "label": "fpNumberLabel",
+          "placeholder": "fpNumberPlaceholder",
+          "supportType": [
+            "text",
+            "number"
+          ],
+          "required": true,
+          "maxItems": 1
+        },
+        {
+          "key": "fpDate",
+          "label": "fpDateLabel",
+          "placeholder": "fpDatePlaceholder",
+          "supportType": [
+            "text",
+            "date"
+          ],
+          "required": true,
+          "maxItems": 1
+        },
+        {
+          "key": "fpAmount",
+          "label": "fpAmountLabel",
+          "placeholder": "fpAmountPlaceholder",
+          "supportType": [
+            "text",
+            "number"
+          ],
+          "required": true,
+          "maxItems": 1
+        }
+      ],
+      "outputFields": [
+        {
+          "key": "fpVerification",
+          "label": "查验结果",
+          "primary": true
+        },
+        {
+          "key": "fpVerificationMsg",
+          "label": "查验信息"
+        },
+        {
+          "key": "fpIsVoided",
+          "label": "是否作废"
+        }
+      ]
+    },
+    {
+      "id": "vehicle-cert",
+      "outputName": "车辆合格证",
+      "utmSource": "dingdingzdjj-clhgz",
+      "debugPrefix": "[ADP vehicle cert]",
+      "idPrefix": "vehicle-cert",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_d9m2p5q8r1t4v7w0x3y6z9a2b5c",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "certificate_of_conformity_number",
+          "label": "合格证编号",
+          "primary": true
+        },
+        {
+          "key": "issuance_date",
+          "label": "发证日期"
+        },
+        {
+          "key": "vehicle_manufacturer_enterprise_name",
+          "label": "车辆制造企业名称"
+        },
+        {
+          "key": "vehicle_brand",
+          "label": "车辆品牌"
+        },
+        {
+          "key": "vehicle_name",
+          "label": "车辆名称"
+        },
+        {
+          "key": "chassis_category",
+          "label": "底盘类别"
+        },
+        {
+          "key": "vehicle_model",
+          "label": "车辆型号"
+        },
+        {
+          "key": "chassis_model",
+          "label": "底盘型号"
+        },
+        {
+          "key": "body_color",
+          "label": "车身颜色"
+        },
+        {
+          "key": "vehicle_identification_number_frame_number",
+          "label": "车辆识别代号/车架号"
+        },
+        {
+          "key": "engine_model",
+          "label": "发动机型号"
+        },
+        {
+          "key": "engine_number",
+          "label": "发动机号"
+        },
+        {
+          "key": "fuel_type",
+          "label": "燃料种类"
+        },
+        {
+          "key": "emission_standard",
+          "label": "排放标准"
+        },
+        {
+          "key": "steering_form",
+          "label": "转向形式"
+        },
+        {
+          "key": "tire_count",
+          "label": "轮胎数"
+        },
+        {
+          "key": "tire_specification",
+          "label": "轮胎规格"
+        },
+        {
+          "key": "front_wheel_track",
+          "label": "前轮轮距"
+        },
+        {
+          "key": "rear_wheel_track",
+          "label": "后轮轮距"
+        },
+        {
+          "key": "wheelbase",
+          "label": "轴距"
+        },
+        {
+          "key": "axle_load",
+          "label": "轴荷"
+        },
+        {
+          "key": "axis_number",
+          "label": "轴数"
+        },
+        {
+          "key": "overall_dimensions",
+          "label": "外廓尺寸"
+        },
+        {
+          "key": "spring_leaf_count",
+          "label": "弹簧片数"
+        },
+        {
+          "key": "total_mass",
+          "label": "总质量"
+        },
+        {
+          "key": "curb_mass",
+          "label": "整备质量"
+        },
+        {
+          "key": "semi_trailer_kingpin_max_allowed_total_mass",
+          "label": "半挂车鞍座最大允许总质量"
+        },
+        {
+          "key": "towing_total_mass",
+          "label": "牵引总质量"
+        },
+        {
+          "key": "cab_occupancy",
+          "label": "驾驶室准乘人数"
+        },
+        {
+          "key": "maximum_design_speed",
+          "label": "最高设计车速"
+        },
+        {
+          "key": "vehicle_manufacture_date",
+          "label": "车辆制造日期"
+        },
+        {
+          "key": "remark",
+          "label": "备注"
+        },
+        {
+          "key": "vehicle_manufacturing_enterprise_info",
+          "label": "车辆制造企业信息"
+        },
+        {
+          "key": "displacement",
+          "label": "排量"
+        },
+        {
+          "key": "power",
+          "label": "功率"
+        }
+      ]
+    },
+    {
+      "id": "account-permit",
+      "outputName": "开户许可证",
+      "utmSource": "dingdingzdjj-khxkz",
+      "debugPrefix": "[ADP account permit]",
+      "idPrefix": "account-permit",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_e5k8n1p4q7r0t3v6w9x2y5z8a1b",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "approval_number",
+          "label": "核准号",
+          "primary": true
+        },
+        {
+          "key": "number",
+          "label": "编号"
+        },
+        {
+          "key": "basic_deposit_account",
+          "label": "基本存款账户"
+        },
+        {
+          "key": "legal_representative",
+          "label": "法定代表人"
+        },
+        {
+          "key": "opening_bank",
+          "label": "开户银行"
+        },
+        {
+          "key": "account",
+          "label": "账号"
+        }
+      ]
+    },
+    {
+      "id": "driver-license",
+      "outputName": "驾驶证",
+      "utmSource": "dingdingzdjj-jsz",
+      "debugPrefix": "[ADP driver license]",
+      "idPrefix": "driver-license",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_f2m5n8p1q4r7t0v3w6x9y2z5a8b",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "driver_license_number",
+          "label": "驾驶证证号",
+          "primary": true
+        },
+        {
+          "key": "name",
+          "label": "姓名"
+        },
+        {
+          "key": "gender",
+          "label": "性别"
+        },
+        {
+          "key": "nationality",
+          "label": "国籍"
+        },
+        {
+          "key": "date_of_birth",
+          "label": "出生日期"
+        },
+        {
+          "key": "first_license_issue_date",
+          "label": "初次领证日期"
+        },
+        {
+          "key": "driving_permit_type",
+          "label": "准驾车型"
+        },
+        {
+          "key": "validity_period_start_end",
+          "label": "有限期始(至)"
+        },
+        {
+          "key": "issuing_agency",
+          "label": "签发机构"
+        },
+        {
+          "key": "residential_address",
+          "label": "住址"
+        },
+        {
+          "key": "file_number",
+          "label": "档案编号"
+        }
+      ]
+    },
+    {
+      "id": "business-license",
+      "outputName": "营业执照",
+      "utmSource": "dingdingzdjj-yyzz",
+      "debugPrefix": "[ADP business license]",
+      "idPrefix": "business-license",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_g8k2n5p1q4r7t0v3w6x9y2z5a8b",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "unified_social_credit_code",
+          "label": "统一社会信用代码",
+          "primary": true
+        },
+        {
+          "key": "is_copy",
+          "label": "是否为副本"
+        },
+        {
+          "key": "name",
+          "label": "名称"
+        },
+        {
+          "key": "type",
+          "label": "类型"
+        },
+        {
+          "key": "business_scope",
+          "label": "经营范围"
+        },
+        {
+          "key": "registered_capital",
+          "label": "注册资本"
+        },
+        {
+          "key": "business_operation_period",
+          "label": "营业期限"
+        },
+        {
+          "key": "business_place",
+          "label": "经营场所"
+        },
+        {
+          "key": "composition_form",
+          "label": "组成形式"
+        },
+        {
+          "key": "operator",
+          "label": "经营者"
+        },
+        {
+          "key": "registration_date",
+          "label": "注册日期/登记日期"
+        }
+      ]
+    },
+    {
+      "id": "passport-cn",
+      "outputName": "护照-中国",
+      "utmSource": "dingdingzdjj-zghz",
+      "debugPrefix": "[ADP passport cn]",
+      "idPrefix": "passport-cn",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_h5m8n1p4q7r0t3v6w9x2y5z8a1b4",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "type",
+          "label": "类型"
+        },
+        {
+          "key": "country_code",
+          "label": "国家码"
+        },
+        {
+          "key": "passport_number",
+          "label": "护照号码",
+          "primary": true
+        },
+        {
+          "key": "name",
+          "label": "姓名"
+        },
+        {
+          "key": "name_pinyin",
+          "label": "姓名拼音"
+        },
+        {
+          "key": "gender",
+          "label": "性别"
+        },
+        {
+          "key": "nationality",
+          "label": "国籍"
+        },
+        {
+          "key": "date_of_birth",
+          "label": "出生日期"
+        },
+        {
+          "key": "birth_place",
+          "label": "出生地点"
+        },
+        {
+          "key": "issuance_date",
+          "label": "签发日期"
+        },
+        {
+          "key": "issuance_place",
+          "label": "签发地点"
+        },
+        {
+          "key": "validity_period",
+          "label": "有效期"
+        },
+        {
+          "key": "issuing_authority",
+          "label": "签发机关"
+        }
+      ]
+    },
+    {
+      "id": "vehicle-license",
+      "outputName": "行驶证",
+      "utmSource": "dingdingzdjj-xsz",
+      "debugPrefix": "[ADP vehicle license]",
+      "idPrefix": "vehicle-license",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_j2k5n8p1q4r7t0v3w6x9y2z5a8b1",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "license_plate_number",
+          "label": "号牌号码",
+          "primary": true
+        },
+        {
+          "key": "vehicle_type",
+          "label": "车辆类型"
+        },
+        {
+          "key": "all_people",
+          "label": "所有人"
+        },
+        {
+          "key": "usage_nature",
+          "label": "使用性质"
+        },
+        {
+          "key": "brand_model",
+          "label": "品牌型号"
+        },
+        {
+          "key": "vehicle_identification_number",
+          "label": "车辆识别代号"
+        },
+        {
+          "key": "engine_number",
+          "label": "发动机号码"
+        },
+        {
+          "key": "registration_date",
+          "label": "注册日期"
+        },
+        {
+          "key": "issuance_date",
+          "label": "发证日期"
+        },
+        {
+          "key": "license_plate_number_supplement",
+          "label": "号牌号码(副页)"
+        },
+        {
+          "key": "file_number",
+          "label": "档案编号"
+        },
+        {
+          "key": "rated_passenger_capacity",
+          "label": "核定载人数"
+        },
+        {
+          "key": "total_mass",
+          "label": "总质量"
+        },
+        {
+          "key": "curb_weight",
+          "label": "整备质量"
+        },
+        {
+          "key": "rated_load_capacity",
+          "label": "核定载质量"
+        },
+        {
+          "key": "overall_dimensions",
+          "label": "外廓尺寸"
+        },
+        {
+          "key": "towing_mass_total_mass",
+          "label": "准牵引质量总质量"
+        },
+        {
+          "key": "inspection_record",
+          "label": "检验记录"
+        },
+        {
+          "key": "remark",
+          "label": "备注"
+        },
+        {
+          "key": "fuel_type",
+          "label": "燃料类型"
+        },
+        {
+          "key": "residential_address",
+          "label": "住址"
+        }
+      ]
+    },
+    {
+      "id": "org-code-cert",
+      "outputName": "组织机构代码证",
+      "utmSource": "dingdingzdjj-zzjgdmz",
+      "debugPrefix": "[ADP org code cert]",
+      "idPrefix": "org-code-cert",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_k8m2n5p1q4r7t0v3w6x9y2z5a8b4",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "code",
+          "label": "代码",
+          "primary": true
+        },
+        {
+          "key": "institution_name",
+          "label": "机构名称"
+        },
+        {
+          "key": "institution_type",
+          "label": "机构类型"
+        },
+        {
+          "key": "legal_representative",
+          "label": "法定代表人"
+        },
+        {
+          "key": "address",
+          "label": "地址"
+        },
+        {
+          "key": "validity_period",
+          "label": "有效期"
+        },
+        {
+          "key": "issuing_organization",
+          "label": "颁发单位"
+        },
+        {
+          "key": "registration_number",
+          "label": "登记号"
+        }
+      ]
+    },
+    {
+      "id": "id-card",
+      "outputName": "身份证",
+      "utmSource": "dingdingzdjj-sfz",
+      "debugPrefix": "[ADP id card]",
+      "idPrefix": "id-card",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_b7k2m5n8p1q4r7t0v3w6x9y2z5",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "name",
+          "label": "姓名",
+          "primary": true
+        },
+        {
+          "key": "gender",
+          "label": "性别"
+        },
+        {
+          "key": "ethnicity",
+          "label": "民族"
+        },
+        {
+          "key": "birth_date",
+          "label": "出生"
+        },
+        {
+          "key": "address",
+          "label": "住址"
+        },
+        {
+          "key": "id_number",
+          "label": "身份证号码"
+        },
+        {
+          "key": "issuing_authority",
+          "label": "签发机构"
+        },
+        {
+          "key": "valid_period",
+          "label": "有效期限"
+        }
+      ]
+    },
+    {
+      "id": "household-book",
+      "outputName": "户口本",
+      "utmSource": "dingdingzdjj-hkb",
+      "debugPrefix": "[ADP household book]",
+      "idPrefix": "household-book",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_l5k8n1p4q7r0t3v6w9x2y5z8a1b7",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "household_type",
+          "label": "户别",
+          "primary": true
+        },
+        {
+          "key": "household_number",
+          "label": "户号"
+        },
+        {
+          "key": "residential_address",
+          "label": "住址"
+        },
+        {
+          "key": "member_name",
+          "label": "姓名"
+        },
+        {
+          "key": "relationship_with_head_of_household",
+          "label": "与户主关系"
+        },
+        {
+          "key": "previous_names",
+          "label": "曾用名"
+        },
+        {
+          "key": "gender",
+          "label": "性别"
+        },
+        {
+          "key": "place_of_birth",
+          "label": "出生地"
+        },
+        {
+          "key": "nationality",
+          "label": "民族"
+        },
+        {
+          "key": "hometown",
+          "label": "籍贯"
+        },
+        {
+          "key": "date_of_birth",
+          "label": "出生日期"
+        },
+        {
+          "key": "this_city_other_address",
+          "label": "本市其他住址"
+        },
+        {
+          "key": "religious_belief",
+          "label": "宗教信仰"
+        },
+        {
+          "key": "id_number",
+          "label": "身份证号码"
+        },
+        {
+          "key": "height",
+          "label": "身高"
+        },
+        {
+          "key": "blood_type",
+          "label": "血型"
+        },
+        {
+          "key": "education_level",
+          "label": "文化程度"
+        },
+        {
+          "key": "marital_status",
+          "label": "婚姻状况"
+        },
+        {
+          "key": "service_place",
+          "label": "服务处所"
+        },
+        {
+          "key": "occupation",
+          "label": "职业"
+        },
+        {
+          "key": "registration_date",
+          "label": "登记日期"
+        },
+        {
+          "key": "number",
+          "label": "编号"
+        }
+      ]
+    },
+    {
+      "id": "bank-card",
+      "outputName": "银行卡",
+      "utmSource": "dingdingzdjj-yhk",
+      "debugPrefix": "[ADP bank card]",
+      "idPrefix": "bank-card",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_c2h5k8n1p4q7r0t3v6w9x2y5z8",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "card_number",
+          "label": "卡号",
+          "primary": true
+        },
+        {
+          "key": "issuing_institution",
+          "label": "发卡机构"
+        },
+        {
+          "key": "validity_period",
+          "label": "有效期"
+        },
+        {
+          "key": "card_type",
+          "label": "卡类型"
+        }
+      ]
+    },
+    {
+      "id": "hk-macao-permit",
+      "outputName": "港澳通行证",
+      "utmSource": "dingdingzdjj-gatxz",
+      "debugPrefix": "[ADP hk macao permit]",
+      "idPrefix": "hk-macao-permit",
+      "adp": {
+        "endpoint": "/app/doc/extract",
+        "appId": "ootb_n2m5n8p1q4r7t0v3w6x9y2z5a8b1c",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "withRecResult": false
+      },
+      "outputFields": [
+        {
+          "key": "name",
+          "label": "姓名",
+          "primary": true
+        },
+        {
+          "key": "english_name",
+          "label": "英文姓名"
+        },
+        {
+          "key": "date_of_birth",
+          "label": "出生日期"
+        },
+        {
+          "key": "gender",
+          "label": "性别"
+        },
+        {
+          "key": "validity_period",
+          "label": "有效期限"
+        },
+        {
+          "key": "issuing_authority",
+          "label": "签发机关"
+        },
+        {
+          "key": "certificate_number",
+          "label": "证件号码"
+        },
+        {
+          "key": "issuance_place",
+          "label": "签发地点"
+        },
+        {
+          "key": "document_machine_readable_code",
+          "label": "证件机读码"
+        }
+      ]
+    },
+    {
+      "id": "custom-document-extraction",
+      "outputName": "文档自定义字段抽取",
+      "utmSource": "dingdingzdjj-wdzdyzdcq",
+      "debugPrefix": "[ADP custom document extraction]",
+      "idPrefix": "custom-document-extraction",
+      "adp": {
+        "endpoint": "/app/doc/extract/direct-fast",
+        "acceptLanguage": "zh",
+        "responseMode": "customFieldExtraction"
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "文档自定义字段抽取（ADP）",
+          "fileLabel": "待抽取文档",
+          "filePlaceholder": "请选择待抽取文档所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）",
+          "fieldNamePlaceholder": "请输入该字母对应的抽取字段名称"
+        },
+        "en-US": {
+          "fieldName": "Custom Document Field Extraction (ADP)",
+          "fileLabel": "Document to extract",
+          "filePlaceholder": "Select an attachment field for document extraction",
+          "fieldNamePlaceholder": "Enter the extraction field name mapped to this letter"
+        },
+        "ja-JP": {
+          "fieldName": "文書カスタムフィールド抽出（ADP）",
+          "fileLabel": "抽出対象文書",
+          "filePlaceholder": "文書抽出する添付フィールドを選択",
+          "fieldNamePlaceholder": "この文字に対応する抽出フィールド名を入力"
+        }
+      },
+      "formItems": [
+        {
+          "key": "attachments",
+          "label": "fileLabel",
+          "placeholder": "filePlaceholder",
+          "component": "fieldSelect",
+          "supportType": [
+            "file"
+          ],
+          "required": true,
+          "maxItems": 1
+        },
+        {
+          "key": "A",
+          "label": "A",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": true
+        },
+        {
+          "key": "B",
+          "label": "B",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "C",
+          "label": "C",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "D",
+          "label": "D",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "E",
+          "label": "E",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "F",
+          "label": "F",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "G",
+          "label": "G",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "H",
+          "label": "H",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "I",
+          "label": "I",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "J",
+          "label": "J",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "K",
+          "label": "K",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "L",
+          "label": "L",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "M",
+          "label": "M",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "N",
+          "label": "N",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "O",
+          "label": "O",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "P",
+          "label": "P",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "Q",
+          "label": "Q",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "R",
+          "label": "R",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "S",
+          "label": "S",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "T",
+          "label": "T",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "U",
+          "label": "U",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "V",
+          "label": "V",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "W",
+          "label": "W",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "X",
+          "label": "X",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "Y",
+          "label": "Y",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        },
+        {
+          "key": "Z",
+          "label": "Z",
+          "placeholder": "fieldNamePlaceholder",
+          "component": "input",
+          "literalLabel": true,
+          "required": false
+        }
+      ],
+      "outputFields": [
+        {
+          "key": "A",
+          "label": "A",
+          "primary": true
+        },
+        {
+          "key": "B",
+          "label": "B"
+        },
+        {
+          "key": "C",
+          "label": "C"
+        },
+        {
+          "key": "D",
+          "label": "D"
+        },
+        {
+          "key": "E",
+          "label": "E"
+        },
+        {
+          "key": "F",
+          "label": "F"
+        },
+        {
+          "key": "G",
+          "label": "G"
+        },
+        {
+          "key": "H",
+          "label": "H"
+        },
+        {
+          "key": "I",
+          "label": "I"
+        },
+        {
+          "key": "J",
+          "label": "J"
+        },
+        {
+          "key": "K",
+          "label": "K"
+        },
+        {
+          "key": "L",
+          "label": "L"
+        },
+        {
+          "key": "M",
+          "label": "M"
+        },
+        {
+          "key": "N",
+          "label": "N"
+        },
+        {
+          "key": "O",
+          "label": "O"
+        },
+        {
+          "key": "P",
+          "label": "P"
+        },
+        {
+          "key": "Q",
+          "label": "Q"
+        },
+        {
+          "key": "R",
+          "label": "R"
+        },
+        {
+          "key": "S",
+          "label": "S"
+        },
+        {
+          "key": "T",
+          "label": "T"
+        },
+        {
+          "key": "U",
+          "label": "U"
+        },
+        {
+          "key": "V",
+          "label": "V"
+        },
+        {
+          "key": "W",
+          "label": "W"
+        },
+        {
+          "key": "X",
+          "label": "X"
+        },
+        {
+          "key": "Y",
+          "label": "Y"
+        },
+        {
+          "key": "Z",
+          "label": "Z"
+        }
+      ]
+    },
+    {
+      "id": "smart-document-reading",
+      "outputName": "智能文档阅读",
+      "utmSource": "dingdingzdjj-znwdyd",
+      "debugPrefix": "[ADP smart document reading]",
+      "idPrefix": "smart-document-reading",
+      "adp": {
+        "endpoint": "/app/doc/recognize",
+        "appId": "ootb_k7m2x9p4v1n8w3q6r5t0y2b4",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "fileNameKey": "file_name",
+        "responseMode": "documentReading",
+        "body": {
+          "model_params": {
+            "recognize_config": {
+              "recognize_mode": "advance",
+              "enable_highlight": 0,
+              "enable_pdf_parse": false,
+              "pdf_pic_second_parsing": false,
+              "enable_stamp_recognition": false
+            }
+          }
+        }
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "智能文档阅读（ADP）",
+          "fileLabel": "待阅读文档",
+          "filePlaceholder": "请选择待阅读文档所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Smart Document Reading (ADP)",
+          "fileLabel": "Document to read",
+          "filePlaceholder": "Select an attachment field for document reading"
+        },
+        "ja-JP": {
+          "fieldName": "スマート文書読解（ADP）",
+          "fileLabel": "読解対象文書",
+          "filePlaceholder": "文書読解する添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "document_content",
+          "label": "文档内容",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "stamp-recognition",
+      "outputName": "印章识别",
+      "utmSource": "dingdingzdjj-yzsb",
+      "debugPrefix": "[ADP stamp recognition]",
+      "idPrefix": "stamp-recognition",
+      "adp": {
+        "endpoint": "/app/doc/recognize",
+        "appId": "ootb_k7m2x9p4v1n8w3q6r5t0y2b4",
+        "acceptLanguage": "zh",
+        "fileBase64Key": "file_base64",
+        "fileNameKey": "file_name",
+        "responseMode": "stampRecognition",
+        "body": {
+          "model_params": {
+            "recognize_config": {
+              "recognize_mode": "advance",
+              "enable_highlight": 0,
+              "enable_pdf_parse": false,
+              "pdf_pic_second_parsing": false,
+              "enable_stamp_recognition": true
+            }
+          }
+        }
+      },
+      "i18n": {
+        "zh-CN": {
+          "fieldName": "印章识别（ADP）",
+          "fileLabel": "待识别文件",
+          "filePlaceholder": "请选择待识别文件所在字段（支持 JPG/JPEG/PNG/PDF/OFD 等附件）"
+        },
+        "en-US": {
+          "fieldName": "Stamp Recognition (ADP)",
+          "fileLabel": "File to recognize",
+          "filePlaceholder": "Select an attachment field for stamp recognition"
+        },
+        "ja-JP": {
+          "fieldName": "印章認識（ADP）",
+          "fileLabel": "認識対象ファイル",
+          "filePlaceholder": "印章認識する添付フィールドを選択"
+        }
+      },
+      "outputFields": [
+        {
+          "key": "stamp_count",
+          "label": "印章数量",
+          "primary": true
+        },
+        {
+          "key": "stamp_info",
+          "label": "印章信息"
+        }
+      ]
+    }
+  ]
+}

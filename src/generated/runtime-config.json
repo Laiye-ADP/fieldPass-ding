@@ -1,0 +1,10 @@
+{
+  "shortcutId": "vat-invoice-full",
+  "adpDomain": "adp.laiye.com",
+  "attachmentDomains": [
+    "dl.dingtalk.com",
+    "static.dingtalk.com",
+    "alidocs.dingtalk.com",
+    "alidocs2-zjk-cdn.dingtalk.com"
+  ]
+}
